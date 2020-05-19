@@ -1,7 +1,8 @@
+{{- if .Values.exporter.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "redis-ha.fullname" . }}
+  name: {{ template "redis-ha.fullname" . }}-exporter
   namespace: {{ .Release.Namespace }}
   labels:
 {{ include "labels.standard" . | indent 4 }}
@@ -13,17 +14,14 @@ metadata:
 {{ toYaml .Values.serviceAnnotations | indent 4 }}
   {{- end }}
 spec:
-  type: ClusterIP
+  type: NodePort
   clusterIP: None
   ports:
-  - name: server
-    port: {{ .Values.redis.port }}
+  - name: exporter-port
+    port: {{ .Values.exporter.port }}
     protocol: TCP
-    targetPort: redis
-  - name: sentinel
-    port: {{ .Values.sentinel.port }}
-    protocol: TCP
-    targetPort: sentinel
+    targetPort: exporter-port
   selector:
     release: {{ .Release.Name }}
     app: {{ template "redis-ha.name" . }}
+{{- end }}
