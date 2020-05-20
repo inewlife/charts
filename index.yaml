@@ -24,6 +24,6 @@ entries:
     - https://github.com/scality/Zenko/tree/development/1.0/kubernetes/zenko/charts/redis-ha
     - https://github.com/oliver006/redis_exporter
     urls:
-    - http://localhost:8879/redis-ha-4.4.4.tgz
+    - redis-ha-4.4.4.tgz
     version: 4.4.4
 generated: "2020-05-20T12:13:42.802329+08:00"
