@@ -1,0 +1,29 @@
+apiVersion: v1
+entries:
+  redis-ha:
+  - apiVersion: v1
+    appVersion: 5.0.6
+    created: "2020-05-20T12:13:42.8043294+08:00"
+    description: Highly available Kubernetes implementation of Redis
+    digest: 1a999ec0c8ba843c8482d23a22f11deb4d4274a45074b50175b3cf36fe20983b
+    engine: gotpl
+    home: http://redis.io/
+    icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
+    keywords:
+    - redis
+    - keyvalue
+    - database
+    maintainers:
+    - email: salimsalaues@gmail.com
+      name: ssalaues
+    - email: aaron.layfield@gmail.com
+      name: dandydeveloper
+    name: redis-ha
+    sources:
+    - https://redis.io/download
+    - https://github.com/scality/Zenko/tree/development/1.0/kubernetes/zenko/charts/redis-ha
+    - https://github.com/oliver006/redis_exporter
+    urls:
+    - http://localhost:8879/redis-ha-4.4.4.tgz
+    version: 4.4.4
+generated: "2020-05-20T12:13:42.802329+08:00"
